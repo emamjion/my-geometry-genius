@@ -136,6 +136,40 @@ function calculation(serial,shapeName,area){
     tableContainer.appendChild(tr);
 }
 
+// Random generate color code
+const triangleCard = document.getElementById('triangle-card');
+triangleCard.addEventListener('mouseover',function(){
+    getNewColor('triangle-card');
+});
+
+document.getElementById('rectangle-card').addEventListener('mouseover',function(){
+    getNewColor('rectangle-card');
+});
+document.getElementById('parallelogram-card').addEventListener('mouseover',function(){
+    getNewColor('parallelogram-card');
+});
+document.getElementById('rhombus-card').addEventListener('mouseover',function(){
+    getNewColor('rhombus-card');
+});
+document.getElementById('pentagon-card').addEventListener('mouseover',function(){
+    getNewColor('pentagon-card');
+});
+document.getElementById('ellipse-card').addEventListener('mouseover',function(){
+    getNewColor('ellipse-card');
+});
+
+// function for generate color
+function getNewColor(inputCardId){
+    let hexCode = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D',,'E','F'];
+    let color = "#";
+    for(let i = 0; i < 6; i ++){
+        let num = Math.round(Math.random() * 15);
+        let num2 = hexCode[num];
+        color = color + num2;
+    }
+    document.getElementById(inputCardId).style.backgroundColor = color;
+
+}
 
 
 
