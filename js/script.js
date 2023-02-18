@@ -1,4 +1,6 @@
-let serial = 0;
+let serial = 0; //Generate serial number and 0 is initial value.
+
+/* I am using Event listener / addEventListener  */
 
 // Triangle
 document.getElementById('triangle-btn').addEventListener('click',function(){
@@ -16,7 +18,14 @@ document.getElementById('triangle-btn').addEventListener('click',function(){
     else if(base < 0 && height < 0){
         alert('Please Enter a positive number');
     }
-
+    else if(base === '' || height === ''){
+        alert('Please Enter a valid number');
+    }
+    else if(base < 0 || height < 0){
+        alert('Please Enter a positive number');
+    }
+    
+    // Calculate area
     const area = (0.5 * parseFloat(base) * parseFloat(height)).toFixed(2);
     calculation(serial,shapeName,area);
     
@@ -39,7 +48,13 @@ document.getElementById('rectangle-btn').addEventListener('click',function(){
     else if(isNaN(width) && isNaN(length)){
         alert('Please enter a Number');
     }
-    
+    else if(width < 0 && length < 0){
+        alert('Please Enter a positive number');
+    }
+    else if(width < 0 || length < 0){
+        alert('Please Enter a positive number');
+    }
+    // Calculate area
     const area = (parseFloat(width) * parseFloat(length)).toFixed(2);
     calculation(serial,shapeName,area);
 });
@@ -52,7 +67,7 @@ document.getElementById('parallelogram-btn').addEventListener('click',function()
 
     const base = document.getElementById('parallelogram-base').value;
     const height = document.getElementById('parallelogram-height').value;
-
+    // Calculate area
     const area = (parseFloat(base) * parseFloat(height)).toFixed(2);
     calculation(serial,shapeName,area);
 });
@@ -66,6 +81,7 @@ document.getElementById('rhombus-btn').addEventListener('click',function(){
     const d1 = document.getElementById('rhombus-d1').value;
     const d2 = document.getElementById('rhombus-d2').value;
 
+    // Calculate area
     const area = (0.5 * parseFloat(d1) * parseFloat(d2)).toFixed(2);
     calculation(serial,shapeName,area);
 });
@@ -79,6 +95,7 @@ document.getElementById('pentagon-btn').addEventListener('click',function(){
     const p = document.getElementById('pentagon-p').value;
     const b = document.getElementById('pentagon-b').value;
 
+    // Calculate area
     const area = (0.5 * parseFloat(p) * parseFloat(b)).toFixed(2);
     calculation(serial,shapeName,area);
 });
@@ -92,6 +109,7 @@ document.getElementById('ellipse-btn').addEventListener('click',function(){
     const a = document.getElementById('ellipse-a').value;
     const b = document.getElementById('ellipse-b').value;
     
+    // Calculate area
     // pi value is = 3.14
     const area = (3.14 * parseFloat(a) * parseFloat(b)).toFixed(2);
     calculation(serial,shapeName,area);
@@ -117,3 +135,11 @@ function calculation(serial,shapeName,area){
     `    
     tableContainer.appendChild(tr);
 }
+
+
+
+
+// I am adding a blog button using event handler
+document.getElementById('blog-btn').addEventListener('click',function(e){
+    window.location.href= 'blog.html';
+});
