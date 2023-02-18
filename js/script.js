@@ -8,7 +8,15 @@ document.getElementById('triangle-btn').addEventListener('click',function(){
 
     const base = document.getElementById('triangle-base').value;
     const height = document.getElementById('triangle-height').value;
-    
+
+    // Check valid or not / validation
+    if(isNaN(base) && isNaN(height)){
+        alert('Please Enter a valid number');
+    }
+    else if(base < 0 && height < 0){
+        alert('Please Enter a positive number');
+    }
+
     const area = (0.5 * parseFloat(base) * parseFloat(height)).toFixed(2);
     calculation(serial,shapeName,area);
     
@@ -24,6 +32,14 @@ document.getElementById('rectangle-btn').addEventListener('click',function(){
     const width = document.getElementById('rectangle-width').value;
     const length = document.getElementById('rectangle-length').value;
 
+    // Check valid or not / validation
+    if(width === '' || length === ''){
+        alert('Please Enter a valid number');
+    }
+    else if(isNaN(width) && isNaN(length)){
+        alert('Please enter a Number');
+    }
+    
     const area = (parseFloat(width) * parseFloat(length)).toFixed(2);
     calculation(serial,shapeName,area);
 });
