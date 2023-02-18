@@ -33,16 +33,16 @@
                             <img src="images/triangle.png" alt="Triangle" class="rounded-xl" />
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title font-medium text-2xl">Triangle</h2>
+                            <h2 id="triangle" class="card-title font-medium text-2xl">Triangle</h2>
                             <p class="my-2">Area (A) = 0.5 x b x h</p>
                             <div>
-                                <input type="text" class="w-24 bg-gray-100 rounded">
+                                <input id="triangle-base" type="text" class="w-24 bg-gray-100 rounded">
                                 <span class="mx-2">cm</span>
-                                <input type="text" class="w-24 bg-gray-100 rounded">
+                                <input id="triangle-height" type="text" class="w-24 bg-gray-100 rounded">
                                 <span class="ml-2">cm</span>
                             </div>
                             <div class="card-actions">
-                                <button class="bg-sky-500 px-24 py-3 rounded-lg text-white font-medium my-8">Calculate</button>
+                                <button id="triangle-btn" class="bg-sky-500 px-24 py-3 rounded-lg text-white font-medium my-8">Calculate</button>
                             </div>
                         </div>
                     </div>
@@ -52,16 +52,16 @@
                             <img src="images/rectangle.png" alt="Rectangle" class="rounded-xl" />
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title font-medium text-2xl">Rectangle</h2>
+                            <h2 id="rectangle" class="card-title font-medium text-2xl">Rectangle</h2>
                             <p class="my-2">Area (A) = w x l</p>
                             <div>
-                                <input type="text" class="w-24 bg-gray-100 rounded">
+                                <input id="rectangle-width" type="text" class="w-24 bg-gray-100 rounded">
                                 <span class="mx-2">cm</span>
-                                <input type="text" class="w-24 bg-gray-100 rounded">
+                                <input id="rectangle-length" type="text" class="w-24 bg-gray-100 rounded">
                                 <span class="ml-2">cm</span>
                             </div>
                             <div class="card-actions">
-                                <button class="bg-sky-500 px-24 py-3 rounded-lg text-white font-medium my-8">Calculate</button>
+                                <button id="rectangle-btn" class="bg-sky-500 px-24 py-3 rounded-lg text-white font-medium my-8">Calculate</button>
                             </div>
                         </div>
                     </div>
@@ -147,8 +147,13 @@
                 <div class="w-[30%]">
                     <!-- Area Calculation -->
                     <div class="card w-96 bg-base-100 border">
-                        <div class="card-body items-center text-center">
+                        <div id="area-calculation" class="card-body items-center text-center">
                             <h2 class="card-title font-medium text-2xl underline">Area Calculation</h2>
+                            <table>
+                                <tbody id="table-container">
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
